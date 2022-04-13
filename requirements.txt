@@ -1,0 +1,31 @@
+Brotli @ file:///C:/ci/brotli-split_1602517705222/work
+certifi==2021.10.8
+click @ file:///C:/ci/click_1646056799533/work
+colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+dash @ file:///tmp/build/80754af9/dash_1611168717544/work
+dash-core-components==1.3.1
+dash-html-components==1.0.1
+dash-renderer==1.1.2
+dash-table @ file:///Users/ktietz/demo/mc3/conda-bld/dash-table_1630660271930/work
+Flask @ file:///opt/conda/conda-bld/flask_1648041541647/work
+Flask-Compress @ file:///tmp/build/80754af9/flask-compress_1623922802283/work
+future==0.18.2
+gunicorn==20.1.0
+itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+Jinja2 @ file:///opt/conda/conda-bld/jinja2_1647436528585/work
+joblib==1.1.0
+MarkupSafe @ file:///C:/ci/markupsafe_1621528314575/work
+numpy==1.22.3
+pandas==1.4.2
+plotly @ file:///opt/conda/conda-bld/plotly_1646671701182/work
+python-dateutil==2.8.2
+pytz==2022.1
+PyYAML==6.0
+scikit-learn==1.0.2
+scipy==1.8.0
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+sklearn==0.0
+tenacity @ file:///C:/ci/tenacity_1632740845368/work
+threadpoolctl==3.1.0
+Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+wincertstore==0.2
