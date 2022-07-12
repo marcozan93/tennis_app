@@ -197,13 +197,13 @@ app.layout = html.Div(style={'backgroundColor': colors['background'],
         'font-family': 'sans-serif'
     })]),
     
-       html.Div([html.Label("Select two players:"),
+       html.Div([html.Label("Select two players to be compared:"),
            dcc.Dropdown(
             id = 'player_one_dropdown',
             options=[
                 {'label':i, 'value':i} for i in atp_player["name"].unique()
             ],
-            #value='MTL'
+            value='Roger Federer',
             placeholder="Select player one",
             multi = False,
         ),
@@ -212,7 +212,7 @@ app.layout = html.Div(style={'backgroundColor': colors['background'],
             options=[
                 {'label':i, 'value':i} for i in atp_player["name"].unique()
             ],
-            #value='MTL'
+            value='Rafael Nadal',
             placeholder="Select player two",
             multi = False,
         ),
@@ -242,6 +242,7 @@ def update_graph(player_name_1, player_name_2):
     
     player_1 = atp_player[atp_player["name"] == player_name_1].iloc[:,5:]
     player_2 = atp_player[atp_player["name"] == player_name_2].iloc[:,5:]
+
     
     selected_players = player_info[(player_info["name"] == player_name_1) |
                 (player_info["name"] == player_name_2)]
@@ -255,19 +256,22 @@ def update_graph(player_name_1, player_name_2):
 
     fig = go.Figure()
     fig.add_trace(go.Scatterpolar(
-        r = player_1.values.flatten(),
-        theta = player_1.columns,
+#        r = player_1.values.flatten(),
+        r = player_1.values.tolist()[0]+[player_1.values.tolist()[0][0]],
+        theta = player_1.columns.tolist()+[player_1.columns.tolist()[0]],
         mode = 'lines+markers',
         name = atp_standardised[atp_standardised["name"] == player_name_1]["name"].unique()[0],
-        line_color = 'peru'
+        line_color = '#FF5733',
+        fill='toself'
         #marker = dict(size=15, color="peru")
         ))
     fig.add_trace(go.Scatterpolar(
-        r = player_2.values.flatten(),
-        theta = player_2.columns,
+        r = player_2.values.tolist()[0]+[player_2.values.tolist()[0][0]],
+        theta = player_2.columns.tolist()+[player_2.columns.tolist()[0]],
         mode = 'lines+markers',
         name = atp_standardised[atp_standardised["name"] == player_name_2]["name"].unique()[0],
-        line_color = 'darkviolet'
+        line_color = '#33DBFF',
+        fill='toself'
         #marker = dict(size=15, color="darkviolet")
         ))
     fig.update_layout(showlegend=True,
@@ -292,24 +296,24 @@ def update_linechart(player_name_1, player_name_2):
     fig1.add_trace(go.Scatter(x=pl2["year"], y=pl2["result"],
                     mode='lines+markers+text',
                     name=pl2["name"].unique()[0],
-                    line_color = "peru",
+                    line_color = "#FF5733",
                      text = pl2["result"],
                      textposition = "middle left",
                      textfont = dict(
                          family = "sans serif",
                          size = 12,
-                         color = "peru")))
+                         color = "#FF5733")))
 
     fig1.add_trace(go.Scatter(x=pl3["year"], y=pl3["result"],
                     mode='lines+markers+text',
                     name=pl3["name"].unique()[0],
-                    line_color = "darkviolet",
+                    line_color = "#33DBFF",
                     text = pl3["result"],
                     textposition = "middle left",
                     textfont=dict(
         family="sans serif",
         size=12,
-        color="darkviolet"
+        color="#33DBFF"
     )))
 
     fig1.update_layout(
