@@ -23,4 +23,4 @@ An example is provided below for Federer vs Nadal.
 - **bpFaced**: number of break points faced
 - **ioc**: international olympic commettee
 
-![Screenshot 2022-04-13 19 30 42](https://user-images.githubusercontent.com/67830462/163248605-0c486ade-3b1d-4dff-bd21-f0ac8ace4f09.png)
+![Screenshot 2022-07-12 09 45 09](https://user-images.githubusercontent.com/67830462/178488588-f9b783bc-89f7-4b24-8fba-519e906f0fab.png)
